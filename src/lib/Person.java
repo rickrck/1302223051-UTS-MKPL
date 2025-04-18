@@ -17,7 +17,9 @@ public class DataEmployee {
     private boolean isForeigner;
     private boolean gender; //true = Laki-laki, false = Perempuan
 
-    public DataEmployee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, int monthWorkingInYear, boolean isForeigner, boolean gender) {
+    private Family family;
+
+    public DataEmployee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, int monthWorkingInYear, boolean isForeigner, boolean gender, Family family) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,6 +31,7 @@ public class DataEmployee {
         this.monthWorkingInYear = monthWorkingInYear;
         this.isForeigner = isForeigner;
         this.gender = gender;
+        this.family = family;
     }
 
     public String getEmployeeId() {

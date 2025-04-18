@@ -12,18 +12,9 @@ public class Employee extends Person {
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
-	
-	private String spouseName;
-	private String spouseIdNumber;
 
-	private List<String> childNames;
-	private List<String> childIdNumbers;
-	
 	public Employee(Person person) {
-		this.person = person;
-
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+		super(person);
 	}
 	
 	/**
@@ -54,19 +45,8 @@ public class Employee extends Person {
 		this.otherMonthlyIncome = income;
 	}
 	
-	public void setSpouse(String spouseName, String spouseIdNumber) {
-		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
-	}
-	
-	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
-	}
-	
 	public int getAnnualIncomeTax() {
 		
-		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
 		person.getMonthWorkingInYear();
 		
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
