@@ -56,23 +56,15 @@ public class Employee {
 		switch(grade) {
 			case 1:
 				monthlySalary = 3000000;
-				if (isForeigner) {
-					monthlySalary = (int) (3000000 * 1.5);
-				}
 				break;
 			case 2:
 				monthlySalary = 5000000;
-				if (isForeigner) {
-					monthlySalary = (int) (5000000 * 1.5);
-				}
 				break;
 			case 3:
 				monthlySalary = 7000000;
-				if (isForeigner) {
-					monthlySalary = (int) (7000000 * 1.5);
-				}
 				break;
 		}
+		monthlySalary = isForeigner ? (int) (monthlySalary * 1.5) : monthlySalary;
 	}
 	
 	public void setAnnualDeductible(int deductible) {	
