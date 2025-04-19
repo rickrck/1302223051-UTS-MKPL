@@ -36,7 +36,32 @@ public class Employee extends Person {
 		}
 		monthlySalary = isForeigner ? (int) (monthlySalary * 1.5) : monthlySalary;
 	}
-	
+
+	public int getMonthlySalary() {
+		return monthlySalary;
+	}
+
+	public int getOtherMonthlyIncome() {
+		return otherMonthlyIncome;
+	}
+
+	public int getAnnualDeductible() {
+		return annualDeductible;
+	}
+
+	public int getMonthWorkingInYear() {
+		return person.getMonthWorkingInYear();
+	}
+
+	public String getSpouseIdNumber() {
+		return person.getFamily().getSpouseIdNumber();
+	}
+
+	public int getNumberOfChildren() {
+		return person.getFamily().getChildIdNumbers().size();
+	}
+
+
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
 	}
@@ -46,9 +71,7 @@ public class Employee extends Person {
 	}
 	
 	public int getAnnualIncomeTax() {
-		
-		person.getMonthWorkingInYear();
-		
-		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
+
+		return TaxFunction.calculateTax(this);
 	}
 }
