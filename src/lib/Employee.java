@@ -16,10 +16,13 @@ public class Employee extends Person {
 	public Employee(Person person) {
 		super(person);
 	}
-	
+
 	/**
-	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
-	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
+	 * Fungsi menentukan Gaji per Bulan:
+	 * - Grade 1: Rp 3.000.000
+	 * - Grade 2: Rp 5.000.000
+	 * - Grade 3: Rp 7.000.000
+	 * Jika asing, gaji bulanan dikalikan 1.5
 	 */
 	
 	public void setMonthlySalary(int grade) {
